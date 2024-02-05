@@ -106,6 +106,50 @@
       "publisher": "André Silva, Sen Fang, Martin Monperrus",
       "releaseDate": "2023/12/25",
       "url": "https://arxiv.org/abs/2312.15698"
+    },
+    {
+      "name": "Generative AI to Generate Test Data Generators",
+      "publisher": "Benoit Baudry, Khashayar Etemadi, Sen Fang, Yogya Gamage, Yi Liu, Yuxin Liu, Martin Monperrus, Javier Ron, André Silva, Deepika Tiwari",
+      "releaseDate": "2024/01/31",
+      "url": "https://arxiv.org/abs/2401.17626"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Python",
+        "CPP",
+        "Java",
+        "Latex",
+        "Bash"
+      ]
+    },
+    {
+      "name": "AI",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Tensorflow",
+        "PyTorch",
+        "Jax",
+        "transformers",
+        "PEFT"
+      ]
+    },
+    {
+      "name": "LLMs",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "CodeLLaMA",
+        "Mamba",
+        "Phi",
+        "FlashAttention",
+        "GPT family"
+      ]
     }
   ],
   "languages": [
