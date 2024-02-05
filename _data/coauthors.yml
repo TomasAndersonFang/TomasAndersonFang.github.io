@@ -21,6 +21,18 @@
   - firstname: ["André", "A.", "André Silva"]
     url: https://andre15silva.github.io/
 
-"shang":
-  - firstname: ["Weiyi", "W.", "W.Y.", "Weiyi Shang"]
+"baudry":
+  - firstname: ["B.", "Benoit", "Benoit Baudry"]
+    url: https://softwarediversity.eu/
+
+"etemadi":
+  - firstname: ["K.", "Khashayar", "Khashayar Etemadi"]
+    url: https://khesoem.github.io/
+
+"tiwari":
+  - firstname: ["D.", "Deepika", "Deepika Tiwari"]
     url: https://ece.uwaterloo.ca/~wshang/
+
+"gamage":
+  - firstname: ["Y.", "Yogya", "Yogya Gamage"]
+    url: https://scholar.google.com/citations?user=m_67-NAAAAAJ&hl=en&authuser=1
