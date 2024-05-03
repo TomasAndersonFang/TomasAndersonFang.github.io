@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-01-30 02:04:00-0400
+date: 2024-04-30 02:04:00-0400
 inline: true
 related_posts: false
 ---
 
-Get my first Ph.D. offer (from NC State University)!!!!!!
+I finally decided to accept PhD offer from NC State University and start my PhD career at 2024 Fall.
