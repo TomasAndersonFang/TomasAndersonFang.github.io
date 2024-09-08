@@ -1,15 +1,15 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>[NC State University](https://www.csc.ncsu.edu/)</a>
+subtitle: <a href="https://www.csc.ncsu.edu/">NC State University</a>
 
 profile:
   align: right
   image: avatar.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Engineering Building 3228</p>
+    <p>Engineering Building II, Room 3228</p>
     <p>890 Oval Dr</p>
     <p>Raleigh NC, USA</p>
 
