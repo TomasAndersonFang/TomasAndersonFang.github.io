@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hello! I am a research engineer at the KTH Royal Institute of Technology, under the guidance of Prof. [Martin Monperrus](https://www.monperrus.net/martin/). I obtained a Master's degree from Central China Normal University. I am deeply fascinated by the intersection of machine learning and software engineering, with a particular focus on AI4SE, LLM4Code, and SE4AI.
+Hello! I'm now a first-year Ph.D. in NC State University, majoring in computer science. Before joining NC State, I was a research engineer at the KTH Royal Institute of Technology, under the guidance of Prof. [Martin Monperrus](https://www.monperrus.net/martin/). I obtained a Master's degree from Central China Normal University. I am deeply fascinated by the intersection of machine learning and software engineering, with a particular focus on AI4SE, LLM4Code, and SE4AI.
 
 My current research primarily revolves around program repair, specifically investigating the effective utilization of LLMs in developing practical, automated program repair models. For those who share an interest in this topic, I invite you to explore my latest work, [RepairLLaMA](https://arxiv.org/abs/2312.15698), which provides insights and advancements in this domain.
 

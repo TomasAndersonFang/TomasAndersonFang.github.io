@@ -2,6 +2,7 @@ github_users:
   - TomasAndersonFang
 
 github_repos:
+  - ASSERT-KTH/repairllama
   - ASSERT-KTH/Supersonic
   - ASSERT-KTH/lollm
   - TomasAndersonFang/PRHAN
