@@ -2,9 +2,9 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Coming soon!
+description:
 nav: true
 nav_order: 6
 ---
 
-- CSC-326 Software Engineering
+- CSC-326 Software Engineering 2024 Fall

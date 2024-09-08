@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>KTH Royal Institute of Technology</a>
+subtitle: <a href='#'>[NC State University](https://www.csc.ncsu.edu/)</a>
 
 profile:
   align: right
   image: avatar.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>LINDSTEDTSVÄGEN 5, PLAN 5, 1548</p>
-    <p>Brinellvägen 8</p>
-    <p>Stockholm, Sweden</p>
+    <p>Engineering Building 3228</p>
+    <p>890 Oval Dr</p>
+    <p>Raleigh NC, USA</p>
 
 news: true # includes a list of news items
 latest_posts: false # includes a list of the newest posts
