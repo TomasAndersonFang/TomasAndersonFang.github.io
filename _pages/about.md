@@ -23,8 +23,6 @@ I am a Ph.D. Candidate in the [Department of Computer Science](https://www.csc.n
 
 I build **intelligent systems that automatically detect software vulnerabilities** by combining large language models with program analysis. My work bridges deep learning and static analysis through **LLM-based agents** that reason over code structure (Code Property Graphs, ASTs) and autonomously wield developer tools (CodeQL, Joern) to find, verify, and explain real-world security flaws. I also investigate **LLM security and robustness** in code-related tasks, ensuring the models we deploy are themselves trustworthy.
 
-I have published **15 papers** with **400+ citations** across top venues including **OOPSLA**, **ICSE**, **IEEE TSE**, **ACM TOSEM**, **IEEE Software**, **SANER**, and **IEEE TR**. 8 of these are first or equal-first author papers.
-
 In my leisure time, I enjoy Japanese Anime and channeling my creativity into writing novels. Additionally, I have a passion for exploring different computer games. A heartfelt thanks to my sweetheart Kiki, whose generosity has expanded my gaming adventures with numerous new additions to my collection.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.

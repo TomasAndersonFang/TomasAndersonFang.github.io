@@ -81,12 +81,6 @@
   ],
   "publications": [
     {
-      "name": "AEGIS: Multi-Agent CPG-Augmented Framework for Automated Vulnerability Detection",
-      "publisher": "Sen Fang, Weiyuan Ding, Bowen Xu",
-      "releaseDate": "2026",
-      "url": ""
-    },
-    {
       "name": "Smaller = Weaker? Benchmarking Robustness of Quantized LLMs in Code Generation",
       "publisher": "Sen Fang, Weiyuan Ding, Antonio Mastropaolo, Bowen Xu",
       "releaseDate": "2025",
