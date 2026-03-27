@@ -84,7 +84,7 @@
       "name": "Smaller = Weaker? Benchmarking Robustness of Quantized LLMs in Code Generation",
       "publisher": "Sen Fang, Weiyuan Ding, Antonio Mastropaolo, Bowen Xu",
       "releaseDate": "2025",
-      "url": ""
+      "url": "https://arxiv.org/abs/2508.20086"
     },
     {
       "name": "EVALOOP: Assessing LLM Robustness in Programming from a Self-consistency Perspective",
