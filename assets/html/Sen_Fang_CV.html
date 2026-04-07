@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sen Fang — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #3d3d3d;
+    --ink-muted: #6b6b6b;
+    --ink-faint: #9a9a9a;
+    --accent: #1e3a5f;
+    --accent-light: #2d5a8e;
+    --accent-wash: #e8f0f8;
+    --accent-glow: #3a7bd5;
+    --paper: #fafaf8;
+    --rule: #d4d0c8;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 20mm;
+  }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: transparent;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Single continuous page for screen ── */
+  .cv-wrapper {
+    max-width: 210mm;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: none;
+    position: relative;
+    padding: 20px 24px 28px 30px;
+  }
+
+  /* Decorative side stripe — hidden when embedded, visible when standalone */
+  .cv-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-glow) 50%, var(--accent) 100%);
+    display: none;
+  }
+
+  @media print {
+    body { background: white; }
+    .cv-wrapper {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    .cv-wrapper::before { display: none; }
+    .section { break-inside: avoid; }
+    .exp-item { break-inside: avoid; }
+    .pub { break-inside: avoid; }
+    .highlight-card { break-inside: avoid; }
+  }
+
+  /* ═══════ HEADER ═══════ */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 22px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 4px;
+  }
+  .header-left h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 42px;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+  .header-left .subtitle {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.8;
+  }
+  .header-right a {
+    color: var(--accent-light);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .header-right a:hover { border-bottom-color: var(--accent-light); }
+  .header-right .divider { color: var(--rule); margin: 0 6px; }
+
+  /* ═══════ FOCUS BANNER ═══════ */
+  .focus-banner {
+    background: linear-gradient(135deg, var(--accent) 0%, #2a4f7a 100%);
+    color: white;
+    padding: 16px 24px;
+    margin: 18px 0 20px 0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .focus-banner::after {
+    content: '';
+    position: absolute;
+    right: -30px; top: -30px;
+    width: 140px; height: 140px;
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .focus-banner::before {
+    content: '';
+    position: absolute;
+    right: 30px; bottom: -40px;
+    width: 100px; height: 100px;
+    border: 2px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .focus-banner p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+  }
+  .focus-banner strong { font-weight: 600; color: #c8ddf5; }
+  .focus-banner .focus-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* ═══════ SECTIONS ═══════ */
+  .section { margin-bottom: 18px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding-top: 2px;
+  }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+  .section-header .line { flex: 1; height: 1px; background: var(--rule); }
+
+  /* ═══════ EDUCATION ═══════ */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .edu-item .school { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+  .edu-item .date { font-size: 12px; color: var(--ink-faint); font-family: var(--mono); letter-spacing: -0.02em; }
+  .edu-detail { font-size: 12.5px; color: var(--ink-muted); margin-bottom: 8px; padding-left: 1px; }
+  .edu-detail em { font-style: italic; }
+  .award-inline {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-wash);
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ═══════ EXPERIENCE ═══════ */
+  .exp-item { margin-bottom: 12px; position: relative; padding-left: 14px; }
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px;
+    width: 4px; height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .exp-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .exp-top .org { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+  .exp-top .date { font-size: 12px; font-family: var(--mono); color: var(--ink-faint); letter-spacing: -0.02em; }
+  .exp-role { font-size: 12.5px; color: var(--ink-muted); font-style: italic; margin: 1px 0 3px 0; }
+  .exp-desc { font-size: 11.5px; color: var(--ink-muted); line-height: 1.6; }
+
+  /* ═══════ PUBLICATIONS ═══════ */
+  .pub-stats { display: flex; gap: 24px; margin-bottom: 16px; padding: 10px 0; }
+  .pub-stat { display: flex; align-items: baseline; gap: 6px; }
+  .pub-stat .num { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .pub-stat .label { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .pub-group-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin: 16px 0 8px 0;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--accent-wash);
+    font-weight: 500;
+  }
+
+  .pub {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 7px;
+    padding-left: 32px;
+    position: relative;
+    color: var(--ink-soft);
+  }
+  .pub .pub-num {
+    position: absolute;
+    left: 0; top: 0;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    font-weight: 500;
+    width: 26px;
+    text-align: right;
+  }
+  .pub .me { font-weight: 700; color: var(--ink); }
+  .pub .title { color: var(--ink); font-weight: 500; }
+  .pub .venue { font-style: italic; color: var(--ink-muted); }
+  .pub .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-left: 4px;
+    vertical-align: middle;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .pub .tag.top { background: #fef3c7; color: #92400e; }
+  .pub .tag.review { background: #e0e7ff; color: #3730a3; }
+  .pub .tag.revision { background: #d1fae5; color: #065f46; }
+  .pub .equal { font-size: 10px; color: var(--ink-faint); }
+
+  /* ═══════ RESEARCH HIGHLIGHTS ═══════ */
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .highlight-card {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 10px 14px;
+    background: white;
+  }
+  .highlight-card .hl-title {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .highlight-card .hl-venue {
+    font-size: 10px;
+    font-family: var(--mono);
+    color: var(--ink-faint);
+    margin-bottom: 5px;
+    letter-spacing: 0.02em;
+  }
+  .highlight-card .hl-venue .hl-tag {
+    display: inline-block;
+    font-size: 8.5px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-left: 4px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .highlight-card .hl-venue .hl-tag.rev { background: #d1fae5; color: #065f46; }
+  .highlight-card .hl-venue .hl-tag.sub { background: #e0e7ff; color: #3730a3; }
+  .highlight-card .hl-venue .hl-tag.spo { background: #fef3c7; color: #92400e; }
+  .highlight-card .hl-body {
+    font-size: 11px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+  .highlight-card .hl-body strong { font-weight: 600; color: var(--ink-soft); }
+
+  /* ═══════ PAGE BREAKS ═══════ */
+  .page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* ═══════ SERVICE / SKILLS ═══════ */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-top: 8px;
+  }
+  .service-item { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 6px; line-height: 1.55; }
+  .service-item strong { font-weight: 600; color: var(--ink); }
+  .service-item a { color: var(--accent-light); text-decoration: none; }
+
+  .skill-row { margin-bottom: 8px; }
+  .skill-row .skill-label {
+    font-size: 11px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .skill-row .skill-items { font-size: 12px; color: var(--ink-muted); line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<div class="cv-wrapper">
+
+  <!-- ═══════ HEADER ═══════ -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Sen Fang</h1>
+      <div class="subtitle">Ph.D. Candidate in Computer Science — NC State University · Seeking Research Internship</div>
+    </div>
+    <div class="header-right">
+      (+1) 984-379-1827<br>
+      sfang9&#64;ncsu.edu<br>
+      <a href="https://tomasandersonfang.github.io">tomasandersonfang.github.io</a>
+      <span class="divider">·</span>
+      <a href="https://scholar.google.com/citations?user=T1mgK5QAAAAJ&hl=en&authuser=1">Google Scholar</a>
+    </div>
+  </div>
+
+  <!-- ═══════ RESEARCH FOCUS ═══════ -->
+  <div class="focus-banner">
+    <span class="focus-label">Research Interests</span>
+    <p>
+      My research lies at the intersection of <strong>large language models and software engineering</strong>,
+      with a focus on three directions: (1) <strong>LLM-based agents for vulnerability detection</strong>
+      — designing multi-agent systems that combine static analysis (CodeQL, Joern, CPGs) with LLM reasoning
+      to automatically find and verify security flaws; (2) <strong>LLM robustness and reliability</strong>
+      — evaluating and improving the consistency of code LLMs under quantization and diverse inputs;
+      and (3) <strong>automated program repair and code optimization</strong> — leveraging fine-tuned LLMs
+      (LoRA/QLoRA) and retrieval-augmented pipelines to fix bugs and improve code performance.
+    </p>
+  </div>
+
+  <!-- ═══════ RESEARCH HIGHLIGHTS ═══════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Research Highlights</h2>
+      <div class="line"></div>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="hl-title"><a href="https://github.com/secureai4code/Aegis" style="color:inherit;text-decoration:none;border-bottom:1px dashed var(--accent)">AEGIS</a></div>
+        <div class="hl-venue">ACM SIGPLAN OOPSLA 2026 <span class="hl-tag sub">Under Review</span></div>
+        <div class="hl-body">
+          A <strong>multi-agent framework</strong> that decouples vulnerability detection into clue discovery and vulnerability reasoning. Uses <strong>Joern CPG queries</strong> for repo-level context augmentation on suspicious code lines, precisely controlling context length and accuracy for scalable detection.
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-title"><a href="https://evalooop.github.io/" style="color:inherit;text-decoration:none;border-bottom:1px dashed var(--accent)">EVALOOOP</a></div>
+        <div class="hl-venue">ACM TOSEM <span class="hl-tag rev">Major Revision</span></div>
+        <div class="hl-body">
+          A <strong>self-consistency-centered framework</strong> for evaluating LLM robustness in code generation. Benchmarks 20+ LLMs across quantization levels and prompt perturbations, revealing <strong>systematic reliability gaps</strong> in code LLMs with practical implications for model deployment.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ EDUCATION ═══════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Education</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="edu-item">
+      <span class="school">NC State University</span>
+      <span class="date">Aug 2024 – Present</span>
+    </div>
+    <div class="edu-detail">
+      <em>Ph.D. in Computer Science</em> · Advisor: Prof. Bowen Xu (SoftMax Lab)<br>
+      Focus: LLM-driven vulnerability detection, AI agents for software security, LLM robustness
+    </div>
+
+    <div class="edu-item">
+      <span class="school">Central China Normal University</span>
+      <span class="date">Sep 2018 – Jun 2020</span>
+    </div>
+    <div class="edu-detail">
+      <em>M.Sc. in Electronics &amp; Communication Engineering</em> · Advisor: Prof. Shaocheng Qu
+    </div>
+
+    <div class="edu-item">
+      <span class="school">Wuhan Polytechnic University</span>
+      <span class="date">Sep 2014 – Jun 2018</span>
+    </div>
+    <div class="edu-detail">
+      <em>B.Sc. in Electronic Information Engineering</em>
+      <span class="award-inline">Outstanding Student 2018</span>
+    </div>
+  </div>
+
+  <!-- ═══════ EXPERIENCE ═══════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Research &amp; Industry Experience</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <span class="org">Hedra</span>
+        <span class="date">May 2025 – Aug 2025</span>
+      </div>
+      <div class="exp-role">Machine Learning Engineer Intern · Supervised by Hongwei Yi</div>
+      <div class="exp-desc">Built petabyte-scale video data processing pipeline; curated millions of high-quality samples for post-training generative models (text-to-video, image-to-video). Collaborated with research and infrastructure teams on data quality metrics and filtering strategies.</div>
+    </div>
+
+    <div class="exp-item page-break">
+      <div class="exp-top">
+        <span class="org">KTH Royal Institute of Technology</span>
+        <span class="date">Mar 2023 – Mar 2024</span>
+      </div>
+      <div class="exp-role">Research Engineer · Advisor: Prof. Martin Monperrus</div>
+      <div class="exp-desc">Co-developed RepairLLaMA (LoRA fine-tuning for program repair) and Supersonic (LLM-driven C/C++ optimization); both published in IEEE TSE. Designed code representation strategies and training pipelines. Contributed to generative-AI-based test data generation.</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <span class="org">Macau University of Science and Technology</span>
+        <span class="date">Sep 2020 – Nov 2022</span>
+      </div>
+      <div class="exp-role">Research Assistant · Advisor: Prof. Tao Zhang</div>
+      <div class="exp-desc">Conducted research on deep-learning-based bug report understanding (ICSE '23), code clone detection via intermediate-code graphs (IEEE TR), and pull request description generation (JSS). Published 5 first-/co-first-author papers.</div>
+    </div>
+  </div>
+
+  <!-- ═══════ SELECTED PUBLICATIONS ═══════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Selected Publications</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="pub-group-label">Vulnerability Detection &amp; Software Security</div>
+
+    <div class="pub">
+      <span class="pub-num">[1]</span>
+      <span class="me">S. Fang</span>, W. Ding, B. Xu.
+      <span class="title">"AEGIS: Multi-Agent CPG-Augmented Framework for Automated Vulnerability Detection."</span>
+      <span class="venue">Submitted to ACM SIGPLAN OOPSLA, 2026.</span>
+      <span class="tag review">Under Review</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[2]</span>
+      Y. Huang, <span class="me">S. Fang</span>, J. Li, J. Tao, B. Hu, T. Zhang.
+      <span class="title">"Deep Smart Contract Intent Detection."</span>
+      <span class="venue">IEEE SANER 2025.</span>
+      <span class="tag top">A</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[3]</span>
+      Y. Li, <span class="me">S. Fang</span>, et al.
+      <span class="title">"Enhancing Android Malware Detection: The Influence of ChatGPT on Decision-centric Tasks."</span>
+      <span class="venue">ACM TOSEM, 2025.</span>
+      <span class="tag top">A*</span>
+    </div>
+
+    <div class="pub-group-label">LLM Robustness</div>
+
+    <div class="pub">
+      <span class="pub-num">[4]</span>
+      <span class="me">S. Fang</span>, W. Ding, A. Mastropaolo, B. Xu.
+      <span class="title">"Smaller = Weaker? Benchmarking Robustness of Quantized LLMs in Code Generation."</span>
+      <span class="venue">IEEE TSE.</span>
+      <span class="tag revision">Major Revision</span>
+      <span class="tag top">A*</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[5]</span>
+      <span class="me">S. Fang</span>, W. Ding, B. Xu.
+      <span class="title">"EVALOOOP: A Self-Consistency-Centered Framework for Assessing Large Language Model Robustness in Programming."</span>
+      <span class="venue">ACM TOSEM.</span>
+      <span class="tag revision">Major Revision</span>
+      <span class="tag top">A*</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[6]</span>
+      Y. Li, T. Zhang, X. Luo, H. Cai, <span class="me">S. Fang</span>, D. Yuan.
+      <span class="title">"Do Pre-trained Language Models Indeed Understand Software Engineering Tasks?"</span>
+      <span class="venue">IEEE TSE.</span>
+      <span class="tag top">A*</span>
+    </div>
+
+    <div class="pub-group-label">Automated Program Repair &amp; Code Optimization</div>
+
+    <div class="pub">
+      <span class="pub-num">[7]</span>
+      <span class="me">S. Fang</span>*, A. Silva*, M. Monperrus.
+      <span class="title">"RepairLLaMA: Efficient Representations and Fine-Tuned Adapters for Program Repair."</span>
+      <span class="venue">IEEE TSE, 2025.</span>
+      <span class="tag top">A*</span>
+      <span class="equal">(*equal contribution)</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[8]</span>
+      Z. Chen, <span class="me">S. Fang</span>, M. Monperrus.
+      <span class="title">"Supersonic: Learning to Generate Source Code Optimizations in C/C++."</span>
+      <span class="venue">IEEE TSE, 2024.</span>
+      <span class="tag top">A*</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[9]</span>
+      B. Baudry, K. Etemadi, <span class="me">S. Fang</span>, et al.
+      <span class="title">"Generative AI to Generate Test Data Generators."</span>
+      <span class="venue">IEEE Software.</span>
+    </div>
+
+    <div class="pub-group-label">Mining Software Engineering &amp; Code Intelligence</div>
+
+    <div class="pub">
+      <span class="pub-num">[10]</span>
+      <span class="me">S. Fang</span>, T. Zhang, Y. Tan, H. Jiang, X. Xia, X. Sun.
+      <span class="title">"RepresentThemAll: A Universal Learning Representation of Bug Reports."</span>
+      <span class="venue">ICSE 2023.</span>
+      <span class="tag top">A*</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[11]</span>
+      D. Yuan*, <span class="me">S. Fang</span>*, T. Zhang, Z. Xu, X. Luo.
+      <span class="title">"Java Code Clone Detection by Exploiting Semantic and Syntax Information from Intermediate Code-Based Graph."</span>
+      <span class="venue">IEEE TR, 2022.</span>
+      <span class="tag top">A</span>
+      <span class="equal">(*equal contribution)</span>
+    </div>
+
+    <div class="pub page-break">
+      <span class="pub-num">[12]</span>
+      <span class="me">S. Fang</span>, T. Zhang, Y. Tan, Z. Xu, Z. Yuan, L. Meng.
+      <span class="title">"PRHAN: Automated Pull Request Description Generation Based on Hybrid Attention Network."</span>
+      <span class="venue">JSS, 2022.</span>
+      <span class="tag top">A</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[13]</span>
+      <span class="me">S. Fang</span>*, Y. Tan*, T. Zhang, Z. Xu, H. Liu.
+      <span class="title">"Effective Prediction of Bug-Fixing Priority via Weighted Graph Convolutional Networks."</span>
+      <span class="venue">IEEE TR, 2021.</span>
+      <span class="tag top">A</span>
+      <span class="equal">(*equal contribution)</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[14]</span>
+      <span class="me">S. Fang</span>, Y. Tan, T. Zhang, Y. Liu.
+      <span class="title">"Self-Attention Networks for Code Search."</span>
+      <span class="venue">IST, 2021.</span>
+      <span class="tag top">A</span>
+    </div>
+
+    <div class="pub">
+      <span class="pub-num">[15]</span>
+      Y. Tan, J. Chen, W. Shang, T. Zhang, <span class="me">S. Fang</span>, X. Luo, Z. Chen, S. Qi.
+      <span class="title">"STRE: An Automated Approach to Suggesting App Developers When to Stop Reading Reviews."</span>
+      <span class="venue">IEEE TSE.</span>
+      <span class="tag top">A*</span>
+    </div>
+  </div>
+
+  <!-- ═══════ SERVICE · HONORS · SKILLS ═══════ -->
+  <div class="two-col">
+
+    <div>
+      <div class="section">
+        <div class="section-header">
+          <h2>Professional Service</h2>
+          <div class="line"></div>
+        </div>
+        <div class="service-item">
+          <strong>Reviewer:</strong> IEEE TSC, ACM TOSEM, IST, EAAI, JSS, ASE, AIR, JCC, and others
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <h2>Honors &amp; Awards</h2>
+          <div class="line"></div>
+        </div>
+        <div class="service-item">
+          <strong><a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2026-north-america">Qualcomm Innovation Fellowship 2026</a></strong> — Finalist<br>
+          North America, Final Round
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="section-header">
+          <h2>Technical Expertise</h2>
+          <div class="line"></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">Vulnerability &amp; Program Analysis</div>
+          <div class="skill-items">Joern, CodeQL, SpotBugs, FindSecBugs, Code Property Graphs, AST / CFG / DFG analysis</div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">LLM Training &amp; Inference</div>
+          <div class="skill-items">PyTorch, Transformers, LoRA / QLoRA / PEFT, vLLM, DeepSpeed, SLURM, JAX</div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">Agent &amp; Retrieval Systems</div>
+          <div class="skill-items">Multi-agent orchestration, RAG pipelines, tool-augmented LLM agents</div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">Languages &amp; Platforms</div>
+          <div class="skill-items">Python, C/C++, Java, LaTeX · Linux, Jupyter, Cursor, Claude Code</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- /cv-wrapper -->
+
+</body>
+</html>
